@@ -1,0 +1,36 @@
+{
+    // All of options : http://www.jshint.com/docs/options/
+    // In Korean : http://blog.outsider.ne.kr/1007
+
+    //Environment
+    "node": true,
+    "browser": true,
+    "jquery": true,
+    "devel": true,
+
+    //Enforcing Options
+    "camelcase": false,
+    "curly": true,
+    "forin": true,
+    "freeze": true,
+    "immed": true,
+    "indent": 2,
+    "newcap": true,
+    "nonew": true,
+    "quotmark": "single",
+    "undef": true,
+    "noarg": true,
+    "noempty": true,
+    "globals": {
+        "angular" : true,
+        "localStorage": true,
+        "$": true
+    },
+
+    //Relaxing Options
+    "smarttabs": true,
+    "sub": true,
+    "laxcomma": true,
+    "laxbreak": true,
+    "debug": true
+}

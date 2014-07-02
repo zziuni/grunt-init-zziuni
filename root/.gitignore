@@ -1,0 +1,7 @@
+node_modules
+*.sublime-project
+*.sublime-workspace
+dest/
+.DS_Store
+access_logs.db
+*.swp
