@@ -2,7 +2,7 @@
   zziuni-template
 */
 
-exports.description = '@zziuni가 만든 grunt template';
+exports.description = '@zziuni 개인용 grunt template';
 exports.notes = '';
 exports.warnOn = '{.*,*}';
 
