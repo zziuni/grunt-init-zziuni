@@ -10,11 +10,12 @@ exports.template = function(grunt, init, done) {
   init.process({}, [
     init.prompt('name'),
     init.prompt('description'),
-    init.prompt('version'),
+    init.prompt('version', '0.0.1'),
     init.prompt('licenses', 'MIT'),
-    init.prompt('author_name'),
-    init.prompt('author_email'),
-    init.prompt('author_url')
+    init.prompt('author_name', 'zziuni'),
+    init.prompt('author_email', 'zziuni@gmail.com'),
+    init.prompt('author_url', 'http://zziuni.github.io'),
+    init.prompt('angular_version', '1.2.19')
   ], function(err, props) {
     // Files to copy (and process).
     var files = init.filesToCopy(props);
@@ -27,5 +28,6 @@ exports.template = function(grunt, init, done) {
       noProcess: 'libs/**'
     });
 
+    done();
   });
 };
