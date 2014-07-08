@@ -32,6 +32,10 @@ exports.template = function(grunt, init, done) {
     grunt.file.mkdir('libs');
     grunt.file.mkdir('stylesheets');
     grunt.file.mkdir('views');
+    grunt.file.mkdir('js/controllers');
+    grunt.file.mkdir('js/services');
+    grunt.file.mkdir('js/filters');
+    grunt.file.mkdir('js/directives');
 
     done();
   });
