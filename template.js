@@ -27,6 +27,11 @@ exports.template = function(grunt, init, done) {
     init.copyAndProcess(files, props, {
       noProcess: 'libs/**'
     });
+    grunt.file.mkdir('dest');
+    grunt.file.mkdir('images');
+    grunt.file.mkdir('libs');
+    grunt.file.mkdir('stylesheets');
+    grunt.file.mkdir('views');
 
     done();
   });
