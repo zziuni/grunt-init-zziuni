@@ -5,3 +5,4 @@ dest/
 .DS_Store
 access_logs.db
 *.swp
+.idea
