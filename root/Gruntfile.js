@@ -160,7 +160,6 @@ module.exports = function(grunt){
         dest: '<%=destPath%>/',
         options: {
           process: function(content, srcpath) {
-            // phonegap 용
             var script = '<script type="text/javascript" src="js/main.min.js"></script>';
             return content.replace(pointForDev, script);
           }
@@ -174,8 +173,8 @@ module.exports = function(grunt){
   grunt.registerTask('copyForDev', ['copy:css', 'copy:view', 'copy:lib', 'copy:indexForDev', 'copy:image']);
 
   grunt.registerTask('product', ['build']);
-  grunt.registerTask('build', ['test', 'clean:build', 'copyForDev', 'browserify:product', , 'uglify:product']);
-  grunt.registerTask('copyForDev', ['copy:css', 'copy:view', 'copy:lib', 'copy:indexForProduct', 'copy:image']);
+  grunt.registerTask('build', ['test', 'clean:build', 'copyForProduct', 'browserify:product', , 'uglify:product']);
+  grunt.registerTask('copyForProduct', ['copy:css', 'copy:view', 'copy:lib', 'copy:indexForProduct', 'copy:image']);
 
   grunt.registerTask('test', ['jshint']); //todo: 유닛 테스트
   grunt.registerTask('server', ['concurrent:dev']);
