@@ -41,4 +41,7 @@
 - spin.js: 2.0.1,
 - angular-spinner: 0.5.0,
 - jquery: 1.10.2,
-- jasmine: 2.0.0
+- jasmine: 2.0.0,
+- ng-clip: ~0.2.1,
+- zeroclipboard: ~2.1.5,
+- angular-strap: ~2.0."
