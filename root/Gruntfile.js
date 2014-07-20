@@ -40,6 +40,22 @@ module.exports = function(grunt){
       }
     },
 
+    compass: {
+      product: {
+        options: {
+          sassDir: '<%=srcPath%>/stylesheets',
+          cssDir: '<%=destPath%>/stylesheets',
+          environment: 'production'
+        }
+      },
+      dev: {
+        options: {
+          sassDir: '<%=srcPath%>/stylesheets',
+          cssDir: '<%=destPath%>/stylesheets'
+        }
+      }
+    },
+
     groc: {
       options: {
         out: 'doc/'
@@ -96,9 +112,9 @@ module.exports = function(grunt){
         files: ['<%=srcPath%>/js/**/*.js'],
         tasks: ['jshint', 'browserify:dev']
       },
-      css: {
-        files: ['<%=srcPath%>/stylesheets/**/*.css'],
-        tasks: ['copy:css']
+      scss: {
+        files: ['<%=srcPath%>/stylesheets/**/*.scss'],
+        tasks: ['compass:dev']
       },
       view: {
         files: ['<%=srcPath%>/views/**/*.html'],
@@ -115,12 +131,6 @@ module.exports = function(grunt){
     },
 
     copy: {
-      css: {
-        expand: true,
-        cwd: '<%=srcPath%>/',
-        src: 'stylesheets/**/*',
-        dest: '<%=destPath%>/'
-      },
       view: {
         expand: true,
         cwd: '<%=srcPath%>/',
@@ -169,12 +179,12 @@ module.exports = function(grunt){
   });
 
   grunt.registerTask('dev', ['buildForDev', 'watch']);
-  grunt.registerTask('buildForDev', ['test', 'clean:build', 'copyForDev', 'browserify:dev']);
-  grunt.registerTask('copyForDev', ['copy:css', 'copy:view', 'copy:lib', 'copy:indexForDev', 'copy:image']);
+  grunt.registerTask('buildForDev', ['test', 'clean:build', 'copyForDev', 'compass:dev', 'browserify:dev']);
+  grunt.registerTask('copyForDev', ['copy:view', 'copy:lib', 'copy:indexForDev', 'copy:image']);
 
   grunt.registerTask('product', ['build']);
-  grunt.registerTask('build', ['test', 'clean:build', 'copyForProduct', 'browserify:product', , 'uglify:product']);
-  grunt.registerTask('copyForProduct', ['copy:css', 'copy:view', 'copy:lib', 'copy:indexForProduct', 'copy:image']);
+  grunt.registerTask('build', ['test', 'clean:build', 'copyForProduct', 'compass:product', 'browserify:product', , 'uglify:product']);
+  grunt.registerTask('copyForProduct', ['copy:view', 'copy:lib', 'copy:indexForProduct', 'copy:image']);
 
   grunt.registerTask('test', ['jshint']); //todo: 유닛 테스트
   grunt.registerTask('server', ['concurrent:dev']);

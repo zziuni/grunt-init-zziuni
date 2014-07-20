@@ -1,0 +1,10 @@
+@import "variables";
+@import "mixins";
+@import "basic";
+
+@import "compass";
+@import "icons/*.png";
+@import "icons_social/*.png";
+
+@include all-icons-sprites;
+@include all-icons_social-sprites;

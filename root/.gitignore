@@ -6,3 +6,4 @@ dest/
 access_logs.db
 *.swp
 .idea
+.sass-cache
